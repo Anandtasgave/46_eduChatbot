@@ -1,0 +1,44 @@
+{
+    "questions_and_answers": [
+        {
+            "question": "What is this chatbot for?",
+            "answer": "This chatbot is designed to assist students and teachers by answering queries and analyzing feedback to improve education systems."
+        },
+        {
+            "question": "How can I provide feedback?",
+            "answer": "You can provide feedback by typing your comments here. The chatbot will analyze it and help identify areas for improvement."
+        },
+        {
+            "question": "What subjects can you help me with?",
+            "answer": "I can assist with a variety of subjects like Math, Science, English, and more. Just ask your question!"
+        },
+        {
+            "question": "How does this chatbot analyze feedback?",
+            "answer": "It uses Azure's Text Analytics API to analyze the sentiment, key phrases, and themes in the feedback you provide."
+        },
+        {
+            "question": "Can I ask questions about a specific topic?",
+            "answer": "Yes, you can ask questions about specific topics, and I'll do my best to provide accurate and helpful answers."
+        },
+        {
+            "question": "How is this chatbot helpful for teachers?",
+            "answer": "Teachers can use this chatbot to collect and analyze feedback from students, access curated resources, and improve their teaching methods."
+        },
+        {
+            "question": "Can you provide study resources?",
+            "answer": "Yes, I can suggest resources and materials for various topics. Just let me know what you're looking for."
+        },
+        {
+            "question": "What is Azure Text Analytics?",
+            "answer": "Azure Text Analytics is a cloud-based service that uses machine learning to analyze text for sentiment, key phrases, named entities, and language."
+        },
+        {
+            "question": "Is my feedback anonymous?",
+            "answer": "Yes, your feedback is processed anonymously and securely to ensure privacy."
+        },
+        {
+            "question": "Can you solve math problems?",
+            "answer": "Yes, I can help with math problems! Please provide the problem, and I'll assist you with the solution."
+        }
+    ]
+}
