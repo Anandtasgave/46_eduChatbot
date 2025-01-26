@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #97e6a2;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,7 +11,7 @@ body {
 
 #chat-container {
     width: 400px;
-    background: #fff;
+    background: #f38c8c;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
@@ -24,12 +24,12 @@ body {
     padding: 15px;
     overflow-y: auto;
     height: 300px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #180303;
 }
 
 .bot-message {
-    background: #0078d7;
-    color: #fff;
+    background: #1a99e8;
+    color: #faf0f0;
     padding: 8px 12px;
     margin: 8px 0;
     border-radius: 12px;
@@ -38,7 +38,7 @@ body {
 }
 
 .user-message {
-    background: #f1f1f1;
+    background: #e8e6e5;
     color: #333;
     padding: 8px 12px;
     margin: 8px 0;
@@ -51,13 +51,13 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background: #fafafa;
+    background: #f3ae79;
 }
 
 #user-input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #f1eb77;
     border-radius: 20px;
     margin-right: 10px;
     outline: none;
@@ -65,7 +65,7 @@ body {
 
 #send-btn {
     background: #0078d7;
-    color: white;
+    color: rgb(234, 234, 230);
     border: none;
     border-radius: 20px;
     padding: 10px 15px;
@@ -75,5 +75,5 @@ body {
 }
 
 #send-btn:hover {
-    background: #005bb5;
+    background: #eff57f;
 }

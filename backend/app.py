@@ -9,15 +9,17 @@ with open("qna.json", "r") as file:
     qna_data = json.load(file)
 
 # Azure Text Analytics Configuration
-AZURE_ENDPOINT = "https://<your-text-analytics-resource>.cognitiveservices.azure.com/"
-AZURE_KEY = "<your-azure-key>"
+AZURE_ENDPOINT = "https://educationchatbot07.cognitiveservices.azure.com/"
+AZURE_KEY = "BTlMt2SJbrSoIdTd8JkoWHQFA0VGUFBgj7XAjdwdFvmStq9Fk1LXJQQJ99BAACYeBjFXJ3w3AAAaACOGjU3x"
 
 def get_answer(user_input):
-    # Check for matching question in Q&A
+    # Loop through all the questions in the Q&A data
     for qa in qna_data["questions_and_answers"]:
+        # Compare the user input to each question (case insensitive)
         if user_input.lower() in qa["question"].lower():
             return qa["answer"]
-    return None
+    return "Sorry, I don't have an answer for that. Can you rephrase your question?"
+
 
 def analyze_feedback(feedback):
     # Analyze feedback using Azure Text Analytics
