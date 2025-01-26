@@ -4,9 +4,11 @@ import requests
 
 app = Flask(__name__)
 
-# Load Q&A data
 with open("qna.json", "r") as file:
     qna_data = json.load(file)
+
+print("Loaded Q&A data:", qna_data)
+
 
 # Azure Text Analytics Configuration
 AZURE_ENDPOINT = "https://educationchatbot07.cognitiveservices.azure.com/"

@@ -51,7 +51,7 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    background: #f3ae79;
+    background: #f3f0ee;
 }
 
 #user-input {
@@ -75,5 +75,5 @@ body {
 }
 
 #send-btn:hover {
-    background: #eff57f;
+    background: #0078d7;
 }

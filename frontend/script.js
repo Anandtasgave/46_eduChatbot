@@ -1,43 +1,42 @@
-const chatBox = document.getElementById("chat-box");
-const userInput = document.getElementById("user-input");
-const sendButton = document.getElementById("send-btn");
-
-function displayMessage(message, type) {
-    const messageElement = document.createElement("p");
-    messageElement.className = `${type}-message`;
-    messageElement.textContent = message;
-    chatBox.appendChild(messageElement);
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-sendButton.addEventListener("click", async () => {
-    const message = userInput.value.trim();
-    if (message === "") return;
-
-    displayMessage(message, "user");
-
-    userInput.value = "";
-
+async function getChatbotResponse(message) {
     try {
-        const response = await fetch("/chat", {
+        const response = await fetch("http://127.0.0.1:5000/chat", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message }),
+            headers: {
+                "Content-Type": "application/json", 
+            },
+            body: JSON.stringify({ message: message }) 
         });
 
-        if (response.ok) {
-            const data = await response.json();
-            displayMessage(data.response, "bot");
-        } else {
-            displayMessage("Sorry, something went wrong. Please try again.", "bot");
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
         }
-    } catch (error) {
-        displayMessage("Error connecting to the server. Please check your connection.", "bot");
-    }
-});
 
-userInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        sendButton.click();
+        const data = await response.json();
+
+        return data.response;
+    } catch (error) {
+        console.error('Error:', error);
+        return "Sorry, there was an error. Please try again later.";
     }
+}
+
+document.getElementById("sendBtn").addEventListener("click", async function() {
+    const userInput = document.getElementById("userInput").value;
+
+    if (userInput.trim() === "") {
+        alert("Please enter a message.");
+        return;
+    }
+
+    document.getElementById("userInput").value = "";
+
+    const chatBox = document.getElementById("chatBox");
+    chatBox.innerHTML += `<div class="user-message">${userInput}</div>`;
+
+    const response = await getChatbotResponse(userInput);
+
+    chatBox.innerHTML += `<div class="bot-response">${response}</div>`;
+
+    chatBox.scrollTop = chatBox.scrollHeight;
 });
