@@ -2,9 +2,14 @@ from flask import Flask, request, jsonify # type: ignore
 import json
 import requests
 
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
 app = Flask(__name__)
 
-with open("qna.json", "r") as file:
+with open("C:/Users/Anand/OneDrive/Desktop/WCE_WORKSHOP/day_2/eduChatbot/backend/qna.json", "r") as file:
     qna_data = json.load(file)
 
 print("Loaded Q&A data:", qna_data)
