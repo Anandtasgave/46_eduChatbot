@@ -1,9 +1,7 @@
-// Get DOM Elements
 const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-btn");
 
-// Function to Display Messages
 function displayMessage(message, type) {
     const messageElement = document.createElement("p");
     messageElement.className = `${type}-message`;
@@ -12,18 +10,14 @@ function displayMessage(message, type) {
     chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the latest message
 }
 
-// Handle Sending User Message
 sendButton.addEventListener("click", async () => {
     const message = userInput.value.trim();
     if (message === "") return;
 
-    // Display user message
     displayMessage(message, "user");
 
-    // Clear input
     userInput.value = "";
 
-    // Send message to backend
     try {
         const response = await fetch("/chat", {
             method: "POST",
@@ -42,7 +36,6 @@ sendButton.addEventListener("click", async () => {
     }
 });
 
-// Allow "Enter" Key to Send Messages
 userInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
         sendButton.click();

@@ -1,4 +1,3 @@
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -10,7 +9,6 @@ body {
     height: 100vh;
 }
 
-/* Chat Container */
 #chat-container {
     width: 400px;
     background: #fff;
@@ -21,7 +19,6 @@ body {
     flex-direction: column;
 }
 
-/* Chat Box */
 #chat-box {
     flex: 1;
     padding: 15px;
@@ -50,7 +47,6 @@ body {
     align-self: flex-end;
 }
 
-/* Input Section */
 #input-container {
     display: flex;
     align-items: center;

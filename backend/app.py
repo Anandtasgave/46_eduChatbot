@@ -15,21 +15,17 @@ with open("C:/Users/Anand/OneDrive/Desktop/WCE_WORKSHOP/day_2/eduChatbot/backend
 print("Loaded Q&A data:", qna_data)
 
 
-# Azure Text Analytics Configuration
 AZURE_ENDPOINT = "https://educationchatbot07.cognitiveservices.azure.com/"
 AZURE_KEY = "BTlMt2SJbrSoIdTd8JkoWHQFA0VGUFBgj7XAjdwdFvmStq9Fk1LXJQQJ99BAACYeBjFXJ3w3AAAaACOGjU3x"
 
 def get_answer(user_input):
-    # Loop through all the questions in the Q&A data
     for qa in qna_data["questions_and_answers"]:
-        # Compare the user input to each question (case insensitive)
         if user_input.lower() in qa["question"].lower():
             return qa["answer"]
     return "Sorry, I don't have an answer for that. Can you rephrase your question?"
 
 
 def analyze_feedback(feedback):
-    # Analyze feedback using Azure Text Analytics
     headers = {
         "Ocp-Apim-Subscription-Key": AZURE_KEY,
         "Content-Type": "application/json"
@@ -51,11 +47,9 @@ def chat():
     data = request.get_json()
     user_input = data.get("message", "")
 
-    # Check for feedback keyword
     if "feedback" in user_input.lower():
         return jsonify({"response": analyze_feedback(user_input)})
 
-    # Get answer from Q&A
     answer = get_answer(user_input)
     if answer:
         return jsonify({"response": answer})
